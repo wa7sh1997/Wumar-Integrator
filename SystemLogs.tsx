@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { LogLevel, SystemLog } from '../types';
+import { LogLevel, SystemLog } from './types';
 import { Terminal, Activity, Cpu, Server, CheckCircle, AlertTriangle } from 'lucide-react';
 
 interface SystemLogsProps {

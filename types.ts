@@ -44,3 +44,13 @@ export interface ExcelGenerationRequest {
   filename: string;
   sheets: SheetData[];
 }
+
+export interface BackendExecutionResponse {
+  message: string;
+  generatedFile?: {
+    id: string;
+    filename: string;
+    sheetNames: string[];
+    downloadUrl: string;
+  };
+}
