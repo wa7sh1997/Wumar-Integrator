@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import { SheetData } from '../types';
+import { SheetData } from './types';
 
 export const generateExcelFile = (filename: string, sheets: SheetData[]): boolean => {
   try {

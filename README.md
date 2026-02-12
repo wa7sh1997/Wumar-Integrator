@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Wumar Integrator
 
-# Run and deploy your AI Studio app
+Wumar Integrator is a Codex-driven execution app that accepts natural-language prompts, routes them through a backend orchestration layer, performs real operations, and can return downloadable Excel artifacts.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1iniAFKxdwP7h2tQ6mWDLrS2olJqim0VY
+- Single prompt input for user commands.
+- Backend execution through OpenAI Codex-compatible Responses API.
+- Real `.xlsx` generation with multiple sheets and formulas supported.
+- Download endpoint for generated files.
+- In-memory artifact registry with automatic cleanup.
 
-## Run Locally
+## Local Setup
 
-**Prerequisites:**  Node.js
+### Prerequisites
 
+- Node.js 20+
+- `OPENAI_API_KEY` environment variable
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Run backend
+
+```bash
+npm run server
+```
+
+Backend starts on `http://localhost:8787`.
+
+### Run frontend
+
+```bash
+npm run dev
+```
+
+Frontend starts on `http://localhost:3000` and proxies `/api` to the backend.
+
+## Environment variables
+
+- `OPENAI_API_KEY` (required): API key for Codex execution.
+- `CODEX_MODEL` (optional): defaults to `gpt-5-codex`.
+- `PORT` (optional): backend port, defaults to `8787`.
